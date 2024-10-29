@@ -8,6 +8,8 @@ void Create(int **a, const int k, const int n, const int Low, const int High);
 void Print(int **a, const int k, const int n);
 int SearchMinSum(int **a, const int k, const int n);
 
+#ifndef UNIT_TESTING
+
 int main()
 {
     srand((unsigned)time(NULL));
@@ -75,3 +77,5 @@ int SearchMinSum(int **a, const int k, const int n)
     }
     return s;
 }
+
+#endif

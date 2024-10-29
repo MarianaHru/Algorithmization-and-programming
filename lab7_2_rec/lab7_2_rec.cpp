@@ -66,6 +66,8 @@ int SearchMinSum(int **a, const int rowCount, const int colCount, int i, int j, 
     }
 }
 
+#ifndef UNIT_TESTING
+
 int main()
 {
     srand((unsigned)time(NULL));
@@ -90,3 +92,5 @@ int main()
     delete[] a;
     return 0;
 }
+
+#endif

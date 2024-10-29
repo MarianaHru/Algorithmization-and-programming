@@ -10,6 +10,8 @@ void Sort(int **t, const int rowCount, const int colCount, int i0 = 0, int i1 = 
 void Change(int **t, const int row1, const int row2, const int colCount, int j = 0);
 void Calc(int **t, const int rowCount, const int colCount, int &S, int &k, int i = 0, int j = 0);
 
+#ifndef UNIT_TESTING
+
 int main()
 {
     srand((unsigned)time(NULL));
@@ -118,3 +120,5 @@ void Calc(int **t, const int rowCount, const int colCount, int &S, int &k, int i
     else
         Calc(t, rowCount, colCount, S, k, i + 1, 0);
 }
+
+#endif

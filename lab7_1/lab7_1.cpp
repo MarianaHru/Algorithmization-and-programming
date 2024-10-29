@@ -11,6 +11,8 @@ void Sort(int **t, const int rowCount, const int colCount);
 void Change(int **t, const int row1, const int row2, const int colCount);
 void Calc(int **t, const int rowCount, const int colCount, int &S, int &k);
 
+#ifndef UNIT_TESTING
+
 int main()
 
 {
@@ -42,6 +44,9 @@ int main()
     delete[] t;
     return 0;
 }
+
+#endif
+
 void Create(int **t, const int rowCount, const int colCount, const int Low, const int High)
 {
     for (int i = 0; i < rowCount; i++)
