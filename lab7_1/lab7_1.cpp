@@ -93,7 +93,7 @@ void Calc(int **t, const int rowCount, const int colCount, int &S, int &k)
     k = 0;
     for (int i = 0; i < rowCount; i++)
         for (int j = 0; j < colCount; j++)
-            if ((t[i][j] < 0) && !(t[i][j] % 5 == 0))
+            if (!(t[i][j] > 0 && t[i][j] % 5 == 0))
             {
                 S += t[i][j];
                 k++;

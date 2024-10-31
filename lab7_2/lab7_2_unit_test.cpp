@@ -14,7 +14,6 @@ TEST(MatrixOperations, Create)
 
     Create(a, k, n, Low, High);
 
-    // Перевіряємо, що всі елементи знаходяться в межах Low та High
     for (int i = 0; i < k; i++)
     {
         for (int j = 0; j < n; j++)
@@ -46,8 +45,6 @@ TEST(MatrixOperations, SearchMinSum)
     a[1][1] = 5;
     a[1][2] = 4;
 
-    // Найменші елементи рядків: 1-й рядок -> 1, 2-й рядок -> -1
-    // Очікувана сума: 1 + (-1) = 0
     EXPECT_EQ(SearchMinSum(a, k, n), 0);
 
     for (int i = 0; i < k; i++)
