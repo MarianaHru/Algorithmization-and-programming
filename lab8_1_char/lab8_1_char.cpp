@@ -1,82 +1,62 @@
-
-
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 
 using namespace std;
 
-int Count(char *s)
+int FindThirdCommaIndex(char s[])
 {
-    int commaCount = 0;
-    char *p = s;
+    int count = 0;
+    char *pos = s;
 
-    while (*p != '\0')
+    while ((pos = strchr(pos, ',')) != nullptr)
     {
-        if (*p == ',')
+        count++;
+        if (count == 3)
         {
-            commaCount++;
+            return pos - s;
         }
-        if (commaCount == 3)
-        {
-            return p - s;
-        }
-        p++;
+        pos++;
     }
-
     return -1;
 }
 
-char *Change(char *s)
+void ReplaceCommas(char s[])
 {
-    size_t len = strlen(s);
-    char *t = new char[len * 2 + 1];
-    char *p = s;
-    char *q = t;
+    // char temp[201] = "";
+    char *result = new char[strlen(s) * 2 + 1];
+    char *pos = s;
+    char *commaPos;
 
-    while (*p != '\0')
+    while ((commaPos = strchr(pos, ',')) != nullptr)
     {
-        if (*p == ',')
-        {
-            *q++ = '*';
-            *q++ = '*';
-        }
-        else
-        {
-            *q++ = *p;
-        }
-        p++;
+        strncat(result, pos, commaPos - pos);
+        strcat(result, "**");
+        pos = commaPos + 1;
     }
+    strcat(result, pos);
 
-    *q = '\0';
-    strcpy(s, t);
-    return t;
+    strcpy(s, result);
 }
-
-#ifndef UNIT_TESTING
 
 int main()
 {
     char str[101];
-    cout << "Enter string:" << endl;
+    cout << "Введіть рядок:" << endl;
     cin.getline(str, 100);
 
-    int commaPos = Count(str);
-    if (commaPos != -1)
+    int thirdCommaIndex = FindThirdCommaIndex(str);
+    if (thirdCommaIndex != -1)
     {
-        cout << "Position of 3rd comma: " << commaPos << endl;
+        cout << "Індекс третьої коми: " << thirdCommaIndex << endl;
     }
     else
     {
-        cout << "There is no 3rd comma in the string." << endl;
+        cout << "У рядку менше трьох ком." << endl;
     }
 
-    char *dest = Change(str);
-    cout << "Modified string (param): " << str << endl;
-    cout << "Modified string (result): " << dest << endl;
+    ReplaceCommas(str);
+    cout << "Модифікований рядок: " << str << endl;
 
-    delete[] dest;
     return 0;
 }
-
-#endif
