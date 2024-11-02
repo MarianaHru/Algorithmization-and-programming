@@ -67,6 +67,7 @@ all: CMakeFiles/lab8_1_unit_test_it.dir/all
 all: CMakeFiles/lab8_1_app.dir/all
 all: CMakeFiles/lab8_1_unit_test_rec.dir/all
 all: CMakeFiles/lab8_1_unit_test_str.dir/all
+all: CMakeFiles/lab8_1_unit_test_char.dir/all
 all: CMakeFiles/lab8_2_unit_test.dir/all
 .PHONY : all
 
@@ -79,6 +80,7 @@ clean: CMakeFiles/lab8_1_unit_test_it.dir/clean
 clean: CMakeFiles/lab8_1_app.dir/clean
 clean: CMakeFiles/lab8_1_unit_test_rec.dir/clean
 clean: CMakeFiles/lab8_1_unit_test_str.dir/clean
+clean: CMakeFiles/lab8_1_unit_test_char.dir/clean
 clean: CMakeFiles/lab8_2_unit_test.dir/clean
 .PHONY : clean
 
@@ -89,7 +91,7 @@ clean: CMakeFiles/lab8_2_unit_test.dir/clean
 CMakeFiles/lab8_1_unit_test_it.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_it.dir/build.make CMakeFiles/lab8_1_unit_test_it.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_it.dir/build.make CMakeFiles/lab8_1_unit_test_it.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=3,4,5 "Built target lab8_1_unit_test_it"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=6,7,8 "Built target lab8_1_unit_test_it"
 .PHONY : CMakeFiles/lab8_1_unit_test_it.dir/all
 
 # Build rule for subdir invocation for target.
@@ -141,7 +143,7 @@ CMakeFiles/lab8_1_app.dir/clean:
 CMakeFiles/lab8_1_unit_test_rec.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_rec.dir/build.make CMakeFiles/lab8_1_unit_test_rec.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_rec.dir/build.make CMakeFiles/lab8_1_unit_test_rec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=6,7,8 "Built target lab8_1_unit_test_rec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=9,10,11 "Built target lab8_1_unit_test_rec"
 .PHONY : CMakeFiles/lab8_1_unit_test_rec.dir/all
 
 # Build rule for subdir invocation for target.
@@ -167,7 +169,7 @@ CMakeFiles/lab8_1_unit_test_rec.dir/clean:
 CMakeFiles/lab8_1_unit_test_str.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_str.dir/build.make CMakeFiles/lab8_1_unit_test_str.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_str.dir/build.make CMakeFiles/lab8_1_unit_test_str.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=9,10,11 "Built target lab8_1_unit_test_str"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=12,13,14 "Built target lab8_1_unit_test_str"
 .PHONY : CMakeFiles/lab8_1_unit_test_str.dir/all
 
 # Build rule for subdir invocation for target.
@@ -187,13 +189,39 @@ CMakeFiles/lab8_1_unit_test_str.dir/clean:
 .PHONY : CMakeFiles/lab8_1_unit_test_str.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/lab8_1_unit_test_char.dir
+
+# All Build rule for target.
+CMakeFiles/lab8_1_unit_test_char.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=3,4,5 "Built target lab8_1_unit_test_char"
+.PHONY : CMakeFiles/lab8_1_unit_test_char.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lab8_1_unit_test_char.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab8_1_unit_test_char.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles 0
+.PHONY : CMakeFiles/lab8_1_unit_test_char.dir/rule
+
+# Convenience name for target.
+lab8_1_unit_test_char: CMakeFiles/lab8_1_unit_test_char.dir/rule
+.PHONY : lab8_1_unit_test_char
+
+# clean rule for target.
+CMakeFiles/lab8_1_unit_test_char.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/clean
+.PHONY : CMakeFiles/lab8_1_unit_test_char.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/lab8_2_unit_test.dir
 
 # All Build rule for target.
 CMakeFiles/lab8_2_unit_test.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_2_unit_test.dir/build.make CMakeFiles/lab8_2_unit_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_2_unit_test.dir/build.make CMakeFiles/lab8_2_unit_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=12,13,14 "Built target lab8_2_unit_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles --progress-num=15,16,17 "Built target lab8_2_unit_test"
 .PHONY : CMakeFiles/lab8_2_unit_test.dir/all
 
 # Build rule for subdir invocation for target.

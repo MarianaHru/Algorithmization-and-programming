@@ -169,6 +169,19 @@ lab8_1_unit_test_str/fast:
 .PHONY : lab8_1_unit_test_str/fast
 
 #=============================================================================
+# Target rules for targets named lab8_1_unit_test_char
+
+# Build rule for target.
+lab8_1_unit_test_char: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab8_1_unit_test_char
+.PHONY : lab8_1_unit_test_char
+
+# fast build rule for target.
+lab8_1_unit_test_char/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/build
+.PHONY : lab8_1_unit_test_char/fast
+
+#=============================================================================
 # Target rules for targets named lab8_2_unit_test
 
 # Build rule for target.
@@ -180,6 +193,54 @@ lab8_2_unit_test: cmake_check_build_system
 lab8_2_unit_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_2_unit_test.dir/build.make CMakeFiles/lab8_2_unit_test.dir/build
 .PHONY : lab8_2_unit_test/fast
+
+lab8_1_char/lab8_1_char.o: lab8_1_char/lab8_1_char.cpp.o
+.PHONY : lab8_1_char/lab8_1_char.o
+
+# target to build an object file
+lab8_1_char/lab8_1_char.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_char.cpp.o
+.PHONY : lab8_1_char/lab8_1_char.cpp.o
+
+lab8_1_char/lab8_1_char.i: lab8_1_char/lab8_1_char.cpp.i
+.PHONY : lab8_1_char/lab8_1_char.i
+
+# target to preprocess a source file
+lab8_1_char/lab8_1_char.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_char.cpp.i
+.PHONY : lab8_1_char/lab8_1_char.cpp.i
+
+lab8_1_char/lab8_1_char.s: lab8_1_char/lab8_1_char.cpp.s
+.PHONY : lab8_1_char/lab8_1_char.s
+
+# target to generate assembly for a file
+lab8_1_char/lab8_1_char.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_char.cpp.s
+.PHONY : lab8_1_char/lab8_1_char.cpp.s
+
+lab8_1_char/lab8_1_unit_test_char.o: lab8_1_char/lab8_1_unit_test_char.cpp.o
+.PHONY : lab8_1_char/lab8_1_unit_test_char.o
+
+# target to build an object file
+lab8_1_char/lab8_1_unit_test_char.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_unit_test_char.cpp.o
+.PHONY : lab8_1_char/lab8_1_unit_test_char.cpp.o
+
+lab8_1_char/lab8_1_unit_test_char.i: lab8_1_char/lab8_1_unit_test_char.cpp.i
+.PHONY : lab8_1_char/lab8_1_unit_test_char.i
+
+# target to preprocess a source file
+lab8_1_char/lab8_1_unit_test_char.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_unit_test_char.cpp.i
+.PHONY : lab8_1_char/lab8_1_unit_test_char.cpp.i
+
+lab8_1_char/lab8_1_unit_test_char.s: lab8_1_char/lab8_1_unit_test_char.cpp.s
+.PHONY : lab8_1_char/lab8_1_unit_test_char.s
+
+# target to generate assembly for a file
+lab8_1_char/lab8_1_unit_test_char.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab8_1_unit_test_char.dir/build.make CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_unit_test_char.cpp.s
+.PHONY : lab8_1_char/lab8_1_unit_test_char.cpp.s
 
 lab8_1_it/lab8_1.o: lab8_1_it/lab8_1.cpp.o
 .PHONY : lab8_1_it/lab8_1.o
@@ -385,10 +446,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab8_1_app"
+	@echo "... lab8_1_unit_test_char"
 	@echo "... lab8_1_unit_test_it"
 	@echo "... lab8_1_unit_test_rec"
 	@echo "... lab8_1_unit_test_str"
 	@echo "... lab8_2_unit_test"
+	@echo "... lab8_1_char/lab8_1_char.o"
+	@echo "... lab8_1_char/lab8_1_char.i"
+	@echo "... lab8_1_char/lab8_1_char.s"
+	@echo "... lab8_1_char/lab8_1_unit_test_char.o"
+	@echo "... lab8_1_char/lab8_1_unit_test_char.i"
+	@echo "... lab8_1_char/lab8_1_unit_test_char.s"
 	@echo "... lab8_1_it/lab8_1.o"
 	@echo "... lab8_1_it/lab8_1.i"
 	@echo "... lab8_1_it/lab8_1.s"

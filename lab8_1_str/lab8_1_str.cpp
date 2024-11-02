@@ -1,61 +1,66 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
 #include <string>
-#include "lab8_1_str.h"
+#include <iostream>
 
 using namespace std;
 
-int Count(const char *str)
+int CountCommas(const string &str)
 {
+    size_t pos = 0;
     int commaCount = 0;
-    for (int i = 0; i < strlen(str); i++)
+
+    while (commaCount < 3)
     {
-        if (str[i] == ',')
-            commaCount++;
+        pos = str.find(',', pos);
+        if (pos == string::npos)
+        {
+            return -1;
+        }
+        commaCount++;
         if (commaCount == 3)
-            return i;
+        {
+            return pos;
+        }
+        pos++;
     }
     return -1;
 }
 
-string Change(const char *str)
+string ReplaceCommas(string &str)
 {
-    string result;
-
-    for (int i = 0; i < strlen(str); i++)
+    size_t pos = 0;
+    while (pos < str.length())
     {
-        if (str[i] == ',')
+        pos = str.find(",", pos);
+        if (pos == string::npos)
         {
-            result += "**";
+            break;
         }
-        else
-        {
-            result += str[i];
-        }
+        str.replace(pos, 1, "**");
+        pos += 2;
     }
-    return result;
+    return str;
 }
-
-#ifndef UNIT_TESTING
 
 int main()
 {
-    char str[101];
-    cout << "Enter string:" << endl;
-    cin.getline(str, 100);
+    string str;
+    cout << "Enter a string:" << endl;
+    getline(cin, str);
 
-    int commaPos = Count(str);
+    int commaPos = CountCommas(str);
     if (commaPos != -1)
+    {
         cout << "Position of 3rd comma: " << commaPos << endl;
+    }
     else
+    {
         cout << "There is no 3rd comma in the string." << endl;
+    }
 
-    string dest = Change(str);
+    string modifiedStr = ReplaceCommas(str);
 
     cout << "Original string          : " << str << endl;
-    cout << "Modified string (result) : " << dest << endl;
+    cout << "Modified string (result) : " << modifiedStr << endl;
 
     return 0;
 }
-#endif

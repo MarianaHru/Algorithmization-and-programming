@@ -43,6 +43,18 @@
 },
 {
   "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
+  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_unit_test_char.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab8_1_char/lab8_1_unit_test_char.cpp",
+  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab8_1_char/lab8_1_unit_test_char.cpp",
+  "output": "CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_unit_test_char.cpp.o"
+},
+{
+  "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
+  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_char.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab8_1_char/lab8_1_char.cpp",
+  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab8_1_char/lab8_1_char.cpp",
+  "output": "CMakeFiles/lab8_1_unit_test_char.dir/lab8_1_char/lab8_1_char.cpp.o"
+},
+{
+  "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
   "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab8_2_unit_test.dir/lab8_2/lab8_2_unit_test.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab8_2/lab8_2_unit_test.cpp",
   "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab8_2/lab8_2_unit_test.cpp",
   "output": "CMakeFiles/lab8_2_unit_test.dir/lab8_2/lab8_2_unit_test.cpp.o"

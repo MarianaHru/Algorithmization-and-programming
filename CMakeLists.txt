@@ -33,6 +33,12 @@ target_compile_definitions(lab8_1_unit_test_str PRIVATE UNIT_TESTING)
 target_link_libraries(lab8_1_unit_test_str PRIVATE GTest::gtest GTest::gtest_main pthread)
 
 
+# Додаємо тести для lab8_1_char
+add_executable(lab8_1_unit_test_char lab8_1_char/lab8_1_unit_test_char.cpp lab8_1_char/lab8_1_char.cpp)
+target_compile_definitions(lab8_1_unit_test_char PRIVATE UNIT_TESTING)
+target_link_libraries(lab8_1_unit_test_char PRIVATE GTest::gtest GTest::gtest_main pthread)
+
+
 # Додаємо тести для lab8_2
 add_executable(lab8_2_unit_test lab8_2/lab8_2_unit_test.cpp lab8_2/lab8_2.cpp)
 target_compile_definitions(lab8_2_unit_test PRIVATE UNIT_TESTING)
