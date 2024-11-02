@@ -13,6 +13,9 @@ int LongestSeriesInRowRecursive(int *row, const int colCount, int currentCol = 1
 void FindRowWithLongestSeriesRecursive(int **a, const int rowCount, const int colCount, int currentRow, int &longestRow, int &maxSeriesLength);
 
 int main()
+
+#ifndef UNIT_TESTING
+
 {
     srand((unsigned)time(NULL));
     int Low = -10;
@@ -46,6 +49,7 @@ int main()
 
     return 0;
 }
+#endif
 
 // void Create(int **a, const int rowCount, const int colCount, const int Low, const int High)
 // {

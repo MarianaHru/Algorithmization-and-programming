@@ -30,3 +30,15 @@ target_link_libraries(lab7_2_unit_test PRIVATE GTest::gtest GTest::gtest_main pt
 add_executable(lab7_2_unit_test_rec lab7_2_rec/lab7_2_unit_test_rec.cpp lab7_2_rec/lab7_2_rec.cpp)
 target_compile_definitions(lab7_2_unit_test_rec PRIVATE UNIT_TESTING)
 target_link_libraries(lab7_2_unit_test_rec PRIVATE GTest::gtest GTest::gtest_main pthread)
+
+
+# Додаємо тести для lab7_3
+add_executable(lab7_3_unit_test lab7_3/lab7_3_unit_test.cpp lab7_3/lab7_3.cpp)
+target_compile_definitions(lab7_3_unit_test PRIVATE UNIT_TESTING)
+target_link_libraries(lab7_3_unit_test PRIVATE GTest::gtest GTest::gtest_main pthread)
+
+
+# Додаємо тести для lab7_3_rec
+add_executable(lab7_3_unit_test_rec lab7_3_rec/lab7_3_unit_test_rec.cpp lab7_3_rec/lab7_3_rec.cpp)
+target_compile_definitions(lab7_3_unit_test_rec PRIVATE UNIT_TESTING)
+target_link_libraries(lab7_3_unit_test_rec PRIVATE GTest::gtest GTest::gtest_main pthread)

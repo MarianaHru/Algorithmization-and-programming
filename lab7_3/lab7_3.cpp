@@ -10,6 +10,8 @@ void Print(int **a, const int rowCount, const int colCount);
 int CountColumnsWithZero(int **a, const int rowCount, const int colCount);
 void FindRowWithLongestSeries(int **a, const int rowCount, const int colCount);
 
+#ifndef UNIT_TESTING
+
 int main()
 {
     srand((unsigned)time(NULL));
@@ -41,6 +43,7 @@ int main()
 
     return 0;
 }
+#endif
 
 // void Create(int **a, const int rowCount, const int colCount, const int Low, const int High)
 // {

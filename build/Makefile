@@ -168,6 +168,32 @@ lab7_2_unit_test_rec/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_2_unit_test_rec.dir/build.make CMakeFiles/lab7_2_unit_test_rec.dir/build
 .PHONY : lab7_2_unit_test_rec/fast
 
+#=============================================================================
+# Target rules for targets named lab7_3_unit_test
+
+# Build rule for target.
+lab7_3_unit_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab7_3_unit_test
+.PHONY : lab7_3_unit_test
+
+# fast build rule for target.
+lab7_3_unit_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/build
+.PHONY : lab7_3_unit_test/fast
+
+#=============================================================================
+# Target rules for targets named lab7_3_unit_test_rec
+
+# Build rule for target.
+lab7_3_unit_test_rec: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab7_3_unit_test_rec
+.PHONY : lab7_3_unit_test_rec
+
+# fast build rule for target.
+lab7_3_unit_test_rec/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/build
+.PHONY : lab7_3_unit_test_rec/fast
+
 lab7_1/lab7_1.o: lab7_1/lab7_1.cpp.o
 .PHONY : lab7_1/lab7_1.o
 
@@ -360,6 +386,102 @@ lab7_2_rec/lab7_2_unit_test_rec.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_2_unit_test_rec.dir/build.make CMakeFiles/lab7_2_unit_test_rec.dir/lab7_2_rec/lab7_2_unit_test_rec.cpp.s
 .PHONY : lab7_2_rec/lab7_2_unit_test_rec.cpp.s
 
+lab7_3/lab7_3.o: lab7_3/lab7_3.cpp.o
+.PHONY : lab7_3/lab7_3.o
+
+# target to build an object file
+lab7_3/lab7_3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/lab7_3/lab7_3.cpp.o
+.PHONY : lab7_3/lab7_3.cpp.o
+
+lab7_3/lab7_3.i: lab7_3/lab7_3.cpp.i
+.PHONY : lab7_3/lab7_3.i
+
+# target to preprocess a source file
+lab7_3/lab7_3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/lab7_3/lab7_3.cpp.i
+.PHONY : lab7_3/lab7_3.cpp.i
+
+lab7_3/lab7_3.s: lab7_3/lab7_3.cpp.s
+.PHONY : lab7_3/lab7_3.s
+
+# target to generate assembly for a file
+lab7_3/lab7_3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/lab7_3/lab7_3.cpp.s
+.PHONY : lab7_3/lab7_3.cpp.s
+
+lab7_3/lab7_3_unit_test.o: lab7_3/lab7_3_unit_test.cpp.o
+.PHONY : lab7_3/lab7_3_unit_test.o
+
+# target to build an object file
+lab7_3/lab7_3_unit_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/lab7_3/lab7_3_unit_test.cpp.o
+.PHONY : lab7_3/lab7_3_unit_test.cpp.o
+
+lab7_3/lab7_3_unit_test.i: lab7_3/lab7_3_unit_test.cpp.i
+.PHONY : lab7_3/lab7_3_unit_test.i
+
+# target to preprocess a source file
+lab7_3/lab7_3_unit_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/lab7_3/lab7_3_unit_test.cpp.i
+.PHONY : lab7_3/lab7_3_unit_test.cpp.i
+
+lab7_3/lab7_3_unit_test.s: lab7_3/lab7_3_unit_test.cpp.s
+.PHONY : lab7_3/lab7_3_unit_test.s
+
+# target to generate assembly for a file
+lab7_3/lab7_3_unit_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test.dir/build.make CMakeFiles/lab7_3_unit_test.dir/lab7_3/lab7_3_unit_test.cpp.s
+.PHONY : lab7_3/lab7_3_unit_test.cpp.s
+
+lab7_3_rec/lab7_3_rec.o: lab7_3_rec/lab7_3_rec.cpp.o
+.PHONY : lab7_3_rec/lab7_3_rec.o
+
+# target to build an object file
+lab7_3_rec/lab7_3_rec.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/lab7_3_rec/lab7_3_rec.cpp.o
+.PHONY : lab7_3_rec/lab7_3_rec.cpp.o
+
+lab7_3_rec/lab7_3_rec.i: lab7_3_rec/lab7_3_rec.cpp.i
+.PHONY : lab7_3_rec/lab7_3_rec.i
+
+# target to preprocess a source file
+lab7_3_rec/lab7_3_rec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/lab7_3_rec/lab7_3_rec.cpp.i
+.PHONY : lab7_3_rec/lab7_3_rec.cpp.i
+
+lab7_3_rec/lab7_3_rec.s: lab7_3_rec/lab7_3_rec.cpp.s
+.PHONY : lab7_3_rec/lab7_3_rec.s
+
+# target to generate assembly for a file
+lab7_3_rec/lab7_3_rec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/lab7_3_rec/lab7_3_rec.cpp.s
+.PHONY : lab7_3_rec/lab7_3_rec.cpp.s
+
+lab7_3_rec/lab7_3_unit_test_rec.o: lab7_3_rec/lab7_3_unit_test_rec.cpp.o
+.PHONY : lab7_3_rec/lab7_3_unit_test_rec.o
+
+# target to build an object file
+lab7_3_rec/lab7_3_unit_test_rec.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/lab7_3_rec/lab7_3_unit_test_rec.cpp.o
+.PHONY : lab7_3_rec/lab7_3_unit_test_rec.cpp.o
+
+lab7_3_rec/lab7_3_unit_test_rec.i: lab7_3_rec/lab7_3_unit_test_rec.cpp.i
+.PHONY : lab7_3_rec/lab7_3_unit_test_rec.i
+
+# target to preprocess a source file
+lab7_3_rec/lab7_3_unit_test_rec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/lab7_3_rec/lab7_3_unit_test_rec.cpp.i
+.PHONY : lab7_3_rec/lab7_3_unit_test_rec.cpp.i
+
+lab7_3_rec/lab7_3_unit_test_rec.s: lab7_3_rec/lab7_3_unit_test_rec.cpp.s
+.PHONY : lab7_3_rec/lab7_3_unit_test_rec.s
+
+# target to generate assembly for a file
+lab7_3_rec/lab7_3_unit_test_rec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7_3_unit_test_rec.dir/build.make CMakeFiles/lab7_3_unit_test_rec.dir/lab7_3_rec/lab7_3_unit_test_rec.cpp.s
+.PHONY : lab7_3_rec/lab7_3_unit_test_rec.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -372,6 +494,8 @@ help:
 	@echo "... lab7_1_unit_test_rec"
 	@echo "... lab7_2_unit_test"
 	@echo "... lab7_2_unit_test_rec"
+	@echo "... lab7_3_unit_test"
+	@echo "... lab7_3_unit_test_rec"
 	@echo "... lab7_1/lab7_1.o"
 	@echo "... lab7_1/lab7_1.i"
 	@echo "... lab7_1/lab7_1.s"
@@ -396,6 +520,18 @@ help:
 	@echo "... lab7_2_rec/lab7_2_unit_test_rec.o"
 	@echo "... lab7_2_rec/lab7_2_unit_test_rec.i"
 	@echo "... lab7_2_rec/lab7_2_unit_test_rec.s"
+	@echo "... lab7_3/lab7_3.o"
+	@echo "... lab7_3/lab7_3.i"
+	@echo "... lab7_3/lab7_3.s"
+	@echo "... lab7_3/lab7_3_unit_test.o"
+	@echo "... lab7_3/lab7_3_unit_test.i"
+	@echo "... lab7_3/lab7_3_unit_test.s"
+	@echo "... lab7_3_rec/lab7_3_rec.o"
+	@echo "... lab7_3_rec/lab7_3_rec.i"
+	@echo "... lab7_3_rec/lab7_3_rec.s"
+	@echo "... lab7_3_rec/lab7_3_unit_test_rec.o"
+	@echo "... lab7_3_rec/lab7_3_unit_test_rec.i"
+	@echo "... lab7_3_rec/lab7_3_unit_test_rec.s"
 .PHONY : help
 
 
