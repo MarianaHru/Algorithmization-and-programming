@@ -1,5 +1,6 @@
-#include "lab7_3_rec.h"
+
 #include <gtest/gtest.h>
+#include "lab7_3_rec.h"
 
 TEST(CountColumnsWithZeroRecursiveTest, BasicTest)
 {
