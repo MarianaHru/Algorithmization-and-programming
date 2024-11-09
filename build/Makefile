@@ -129,6 +129,32 @@ lab9_1_unit_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_1_unit_test.dir/build.make CMakeFiles/lab9_1_unit_test.dir/build
 .PHONY : lab9_1_unit_test/fast
 
+#=============================================================================
+# Target rules for targets named lab9_2_1_unit_test
+
+# Build rule for target.
+lab9_2_1_unit_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab9_2_1_unit_test
+.PHONY : lab9_2_1_unit_test
+
+# fast build rule for target.
+lab9_2_1_unit_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/build
+.PHONY : lab9_2_1_unit_test/fast
+
+#=============================================================================
+# Target rules for targets named lab9_2_2_unit_test
+
+# Build rule for target.
+lab9_2_2_unit_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab9_2_2_unit_test
+.PHONY : lab9_2_2_unit_test
+
+# fast build rule for target.
+lab9_2_2_unit_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/build
+.PHONY : lab9_2_2_unit_test/fast
+
 lab9_1/lab9_1.o: lab9_1/lab9_1.cpp.o
 .PHONY : lab9_1/lab9_1.o
 
@@ -177,6 +203,102 @@ lab9_1/lab9_1_unit_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_1_unit_test.dir/build.make CMakeFiles/lab9_1_unit_test.dir/lab9_1/lab9_1_unit_test.cpp.s
 .PHONY : lab9_1/lab9_1_unit_test.cpp.s
 
+lab9_2_1/lab9_2_1.o: lab9_2_1/lab9_2_1.cpp.o
+.PHONY : lab9_2_1/lab9_2_1.o
+
+# target to build an object file
+lab9_2_1/lab9_2_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/lab9_2_1/lab9_2_1.cpp.o
+.PHONY : lab9_2_1/lab9_2_1.cpp.o
+
+lab9_2_1/lab9_2_1.i: lab9_2_1/lab9_2_1.cpp.i
+.PHONY : lab9_2_1/lab9_2_1.i
+
+# target to preprocess a source file
+lab9_2_1/lab9_2_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/lab9_2_1/lab9_2_1.cpp.i
+.PHONY : lab9_2_1/lab9_2_1.cpp.i
+
+lab9_2_1/lab9_2_1.s: lab9_2_1/lab9_2_1.cpp.s
+.PHONY : lab9_2_1/lab9_2_1.s
+
+# target to generate assembly for a file
+lab9_2_1/lab9_2_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/lab9_2_1/lab9_2_1.cpp.s
+.PHONY : lab9_2_1/lab9_2_1.cpp.s
+
+lab9_2_1/lab9_2_1_unit_test.o: lab9_2_1/lab9_2_1_unit_test.cpp.o
+.PHONY : lab9_2_1/lab9_2_1_unit_test.o
+
+# target to build an object file
+lab9_2_1/lab9_2_1_unit_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/lab9_2_1/lab9_2_1_unit_test.cpp.o
+.PHONY : lab9_2_1/lab9_2_1_unit_test.cpp.o
+
+lab9_2_1/lab9_2_1_unit_test.i: lab9_2_1/lab9_2_1_unit_test.cpp.i
+.PHONY : lab9_2_1/lab9_2_1_unit_test.i
+
+# target to preprocess a source file
+lab9_2_1/lab9_2_1_unit_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/lab9_2_1/lab9_2_1_unit_test.cpp.i
+.PHONY : lab9_2_1/lab9_2_1_unit_test.cpp.i
+
+lab9_2_1/lab9_2_1_unit_test.s: lab9_2_1/lab9_2_1_unit_test.cpp.s
+.PHONY : lab9_2_1/lab9_2_1_unit_test.s
+
+# target to generate assembly for a file
+lab9_2_1/lab9_2_1_unit_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_1_unit_test.dir/build.make CMakeFiles/lab9_2_1_unit_test.dir/lab9_2_1/lab9_2_1_unit_test.cpp.s
+.PHONY : lab9_2_1/lab9_2_1_unit_test.cpp.s
+
+lab9_2_2/lab9_2_2.o: lab9_2_2/lab9_2_2.cpp.o
+.PHONY : lab9_2_2/lab9_2_2.o
+
+# target to build an object file
+lab9_2_2/lab9_2_2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/lab9_2_2/lab9_2_2.cpp.o
+.PHONY : lab9_2_2/lab9_2_2.cpp.o
+
+lab9_2_2/lab9_2_2.i: lab9_2_2/lab9_2_2.cpp.i
+.PHONY : lab9_2_2/lab9_2_2.i
+
+# target to preprocess a source file
+lab9_2_2/lab9_2_2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/lab9_2_2/lab9_2_2.cpp.i
+.PHONY : lab9_2_2/lab9_2_2.cpp.i
+
+lab9_2_2/lab9_2_2.s: lab9_2_2/lab9_2_2.cpp.s
+.PHONY : lab9_2_2/lab9_2_2.s
+
+# target to generate assembly for a file
+lab9_2_2/lab9_2_2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/lab9_2_2/lab9_2_2.cpp.s
+.PHONY : lab9_2_2/lab9_2_2.cpp.s
+
+lab9_2_2/lab9_2_2_unit_test.o: lab9_2_2/lab9_2_2_unit_test.cpp.o
+.PHONY : lab9_2_2/lab9_2_2_unit_test.o
+
+# target to build an object file
+lab9_2_2/lab9_2_2_unit_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/lab9_2_2/lab9_2_2_unit_test.cpp.o
+.PHONY : lab9_2_2/lab9_2_2_unit_test.cpp.o
+
+lab9_2_2/lab9_2_2_unit_test.i: lab9_2_2/lab9_2_2_unit_test.cpp.i
+.PHONY : lab9_2_2/lab9_2_2_unit_test.i
+
+# target to preprocess a source file
+lab9_2_2/lab9_2_2_unit_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/lab9_2_2/lab9_2_2_unit_test.cpp.i
+.PHONY : lab9_2_2/lab9_2_2_unit_test.cpp.i
+
+lab9_2_2/lab9_2_2_unit_test.s: lab9_2_2/lab9_2_2_unit_test.cpp.s
+.PHONY : lab9_2_2/lab9_2_2_unit_test.s
+
+# target to generate assembly for a file
+lab9_2_2/lab9_2_2_unit_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab9_2_2_unit_test.dir/build.make CMakeFiles/lab9_2_2_unit_test.dir/lab9_2_2/lab9_2_2_unit_test.cpp.s
+.PHONY : lab9_2_2/lab9_2_2_unit_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +308,26 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab9_1_unit_test"
+	@echo "... lab9_2_1_unit_test"
+	@echo "... lab9_2_2_unit_test"
 	@echo "... lab9_1/lab9_1.o"
 	@echo "... lab9_1/lab9_1.i"
 	@echo "... lab9_1/lab9_1.s"
 	@echo "... lab9_1/lab9_1_unit_test.o"
 	@echo "... lab9_1/lab9_1_unit_test.i"
 	@echo "... lab9_1/lab9_1_unit_test.s"
+	@echo "... lab9_2_1/lab9_2_1.o"
+	@echo "... lab9_2_1/lab9_2_1.i"
+	@echo "... lab9_2_1/lab9_2_1.s"
+	@echo "... lab9_2_1/lab9_2_1_unit_test.o"
+	@echo "... lab9_2_1/lab9_2_1_unit_test.i"
+	@echo "... lab9_2_1/lab9_2_1_unit_test.s"
+	@echo "... lab9_2_2/lab9_2_2.o"
+	@echo "... lab9_2_2/lab9_2_2.i"
+	@echo "... lab9_2_2/lab9_2_2.s"
+	@echo "... lab9_2_2/lab9_2_2_unit_test.o"
+	@echo "... lab9_2_2/lab9_2_2_unit_test.i"
+	@echo "... lab9_2_2/lab9_2_2_unit_test.s"
 .PHONY : help
 
 

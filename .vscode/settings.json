@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "iomanip": "cpp",
-        "ostream": "cpp"
-    }
+        "ostream": "cpp",
+        "iosfwd": "cpp"
+    },
+    "C_Cpp.dimInactiveRegions": false
 }
