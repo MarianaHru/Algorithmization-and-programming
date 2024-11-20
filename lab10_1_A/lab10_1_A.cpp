@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Перелік спеціальностей
 enum Specialnist
 {
     KN,
@@ -42,7 +41,6 @@ void CreateStudents(Student *students, const int N)
         cin >> specialnist;
         students[i].specialnist = (Specialnist)specialnist;
 
-        // Введення оцінок
         cout << " Оцінка з фізики: ";
         cin >> students[i].ocinka_fizyka;
         cout << " Оцінка з математики: ";
@@ -53,21 +51,21 @@ void CreateStudents(Student *students, const int N)
     }
 }
 
-// Функція для виведення студентів на екран
 void PrintStudents(const Student *students, const int N)
 {
     cout << "==========================================================================================" << endl;
-    cout << "| № | Прізвище     | Курс   | Спеціальність       | Фізика | Математика | Інформатика    |" << endl;
+    cout << "| № | Прізвище     | Курс   | Спеціальність     | Фізика   | Математика  | Інформатика   |" << endl;
     cout << "------------------------------------------------------------------------------------------" << endl;
     for (int i = 0; i < N; i++)
     {
-        cout << "|" << setw(2) << i + 1
+        cout << "|" << setw(2) << right << i + 1
              << " | " << setw(16) << left << students[i].prizv
-             << "|     " << setw(3) << right << students[i].kurs
-             << " |   " << setw(26) << left << specialnistStr[students[i].specialnist]
-             << " |   " << setw(6) << students[i].ocinka_fizyka
-             << " |      " << setw(4) << students[i].ocinka_matematyka
-             << "   | " << setw(7) << students[i].ocinka_informatyka << "     |" << endl;
+             << "|    " << setw(4) << right << students[i].kurs
+             << "|       " << setw(18) << left << specialnistStr[students[i].specialnist]
+             << " |    " << setw(6) << right << students[i].ocinka_fizyka
+             << "|    " << setw(10) << right << students[i].ocinka_matematyka
+             << "|" << setw(9) << right << students[i].ocinka_informatyka << "     |"
+             << endl;
     }
     cout << "==========================================================================================" << endl;
 }

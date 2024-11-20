@@ -1,209 +1,248 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <algorithm>
-#include <numeric> // Для функції iota
+#include <cmath>
 
 using namespace std;
 
-// Перелік спеціальностей
-enum Specialnist
+enum Specialization
 {
-    KN,
-    INF,
-    ME,
-    FI,
-    TN
+    COMPUTER_SCIENCE,
+    MATHEMATICS,
+    PHYSICS,
+    ENGINEERING,
+    BIOLOGY
 };
-string specialnistStr[] = {"Комп'ютерні науки", "Інформатика", "Економіка", "Фізика", "Трудове навчання"};
+string specializationStr[] = {"Комп'ютерні науки", "Математика", "Фізика", "Інженерія", "Біологія"};
 
-// Структура для зберігання інформації про студента
 struct Student
 {
-    string prizv;
-    int kurs;
-    Specialnist specialnist;
-    int ocinka_fizyka;
-    int ocinka_matematyka;
-    int ocinka_informatyka;
-
-    double averageGrade() const
-    {
-        return (ocinka_fizyka + ocinka_matematyka + ocinka_informatyka) / 3.0;
-    }
+    string surname;
+    unsigned course;
+    Specialization specialization;
+    int physics;
+    int mathematics;
+    int informatics;
 };
 
-// Функція для створення масиву студентів
-void CreateStudents(Student students[], int N)
+void InputStudents(Student *students, int N);
+void PrintStudents(const Student *students, int N);
+double CalculateAverage(const Student &student);
+void SortStudentsPhysical(Student *students, int N);
+int *IndexSort(const Student *students, int N);
+void PrintIndexSorted(const Student *students, int *I, int N);
+bool BinarySearchStudent(const Student *students, int N, const string &surname, Specialization spec, double avgScore);
+
+int main()
 {
+    int numStudents;
+    cout << "Введіть кількість студентів: ";
+    cin >> numStudents;
+
+    Student *students = new Student[numStudents];
+    int menuItem;
+    do
+    {
+        cout << "\nМеню:\n";
+        cout << "1 - Введення даних студентів\n";
+        cout << "2 - Вивід даних студентів\n";
+        cout << "3 - Фізичне впорядкування студентів\n";
+        cout << "4 - Бінарний пошук студент\n";
+        cout << "5 - Індексне впорядкування студентів\n";
+        cout << "0 - Вихід\n";
+        cout << "Виберіть дію: ";
+        cin >> menuItem;
+
+        switch (menuItem)
+        {
+        case 1:
+            InputStudents(students, numStudents);
+            break;
+        case 2:
+            PrintStudents(students, numStudents);
+            break;
+        case 3:
+            SortStudentsPhysical(students, numStudents);
+            cout << "Список студентів відсортовано фізично.\n";
+            break;
+        case 4:
+        {
+            string surname;
+            int spec;
+            double avgScore;
+
+            cout << "Введіть прізвище студента: ";
+            cin.ignore();
+            getline(cin, surname);
+            cout << "Введіть спеціальність (0 - Комп'ютерні науки, 1 - Математика, 2 - Фізика, 3 - Інженерія, 4 - Біологія): ";
+            cin >> spec;
+            cout << "Введіть середній бал студента: ";
+            cin >> avgScore;
+
+            bool found = BinarySearchStudent(students, numStudents, surname, static_cast<Specialization>(spec), avgScore);
+            if (found)
+            {
+                cout << "Студент знайдений.\n";
+            }
+            else
+            {
+                cout << "Студента не знайдено.\n";
+            }
+            break;
+        }
+        case 5:
+        {
+            int *indices = IndexSort(students, numStudents);
+            PrintIndexSorted(students, indices, numStudents);
+            delete[] indices;
+            break;
+        }
+
+        case 0:
+            break;
+        default:
+            cout << "Неправильний вибір. Спробуйте ще раз.\n";
+        }
+    } while (menuItem != 0);
+
+    delete[] students;
+    return 0;
+}
+
+void InputStudents(Student *students, int N)
+{
+    int spec;
     for (int i = 0; i < N; i++)
     {
-        cout << "Студент № " << i + 1 << ":" << endl;
+        cout << "Студент № " << i + 1 << ":\n";
+        cin.ignore();
         cout << " Прізвище: ";
-        cin >> students[i].prizv;
+        getline(cin, students[i].surname);
         cout << " Курс: ";
-        cin >> students[i].kurs;
-
-        int specialnist;
-        cout << " Спеціальність (0 - Комп'ютерні науки, 1 - Інформатика, 2 - Економіка, 3 - Фізика, 4 - Трудове навчання): ";
-        cin >> specialnist;
-        students[i].specialnist = static_cast<Specialnist>(specialnist);
-
-        // Введення оцінок
+        cin >> students[i].course;
+        cout << " Спеціальність (0 - Комп'ютерні науки, 1 - Математика, 2 - Фізика, 3 - Інженерія, 4 - Біологія): ";
+        cin >> spec;
+        students[i].specialization = static_cast<Specialization>(spec);
         cout << " Оцінка з фізики: ";
-        cin >> students[i].ocinka_fizyka;
+        cin >> students[i].physics;
         cout << " Оцінка з математики: ";
-        cin >> students[i].ocinka_matematyka;
+        cin >> students[i].mathematics;
         cout << " Оцінка з інформатики: ";
-        cin >> students[i].ocinka_informatyka;
+        cin >> students[i].informatics;
     }
 }
 
-// Функція-компаратор для фізичного впорядкування
-bool CompareStudents(const Student &a, const Student &b)
+void PrintStudents(const Student *students, int N)
 {
-    if (a.specialnist != b.specialnist)
-        return a.specialnist < b.specialnist; // Сортування за спеціальністю
-    if (a.averageGrade() != b.averageGrade())
-        return a.averageGrade() > b.averageGrade(); // Сортування за середнім балом у порядку спадання
-    return a.prizv < b.prizv;                       // Сортування за прізвищем
-}
+    cout << "===================================================================================\n";
+    cout << "| № | Прізвище      | Курс | Спеціальність | Фізика | Математика | Інформатика    |\n";
+    cout << "-----------------------------------------------------------------------------------\n";
 
-// Функція для фізичного впорядкування студентів
-void SortStudentsPhysically(Student students[], int N)
-{
-    sort(students, students + N, CompareStudents);
-}
-
-// Функція для створення індексного масиву
-void CreateIndexArray(int indices[], const Student students[], int N)
-{
-    iota(indices, indices + N, 0); // Ініціалізація індексного масиву
-
-    sort(indices, indices + N, [&](int a, int b)
-         { return CompareStudents(students[a], students[b]); });
-}
-
-// Функція для виведення студентів у таблиці
-void PrintStudents(const Student students[], int N)
-{
-    cout << "======================================================================" << endl;
-    cout << "| № | Прізвище       | Курс | Спеціальність          | Фізика | Математика | Інформатика | Середній бал |" << endl;
-    cout << "----------------------------------------------------------------------" << endl;
     for (int i = 0; i < N; i++)
     {
-
-        cout << "|" << setw(2) << i + 1
-             << " | " << setw(15) << left << students[i].prizv
-             << "| " << setw(4) << right << students[i].kurs
-             << " | " << setw(22) << left << specialnistStr[students[i].specialnist]
-             << " | " << setw(6) << students[i].ocinka_fizyka
-             << " | " << setw(10) << students[i].ocinka_matematyka
-             << " | " << setw(11) << students[i].ocinka_informatyka
-             << " | " << setw(11) << fixed << setprecision(2) << students[i].averageGrade() << " |" << endl;
+        cout << "| " << setw(2) << i + 1 << "| ";
+        cout << setw(15) << left << students[i].surname;
+        cout << "    | " << setw(4) << right << students[i].course;
+        cout << " | " << setw(18) << left << specializationStr[students[i].specialization];
+        cout << "   | " << setw(6) << right << students[i].physics;
+        cout << " | " << setw(10) << right << students[i].mathematics;
+        cout << " | " << setw(11) << right << students[i].informatics << " |\n";
     }
-    cout << "======================================================================" << endl;
+    cout << "=====================================================================================\n";
 }
 
-// Функція для бінарного пошуку студента за прізвищем та середнім балом
-bool BinarySearchStudent(const Student students[], int N, const string &prizv, double avgGrade)
+double CalculateAverage(const Student &student)
 {
+    return (student.physics + student.mathematics + student.informatics) / 3.0;
+}
+
+void SortStudentsPhysical(Student *students, int N)
+{
+    for (int i = 0; i < N - 1; i++)
+    {
+        for (int j = i + 1; j < N; j++)
+        {
+            bool swap = false;
+            if (students[i].specialization > students[j].specialization ||
+                students[i].specialization == students[j].specialization && CalculateAverage(students[i]) > CalculateAverage(students[j]) ||
+                students[i].specialization == students[j].specialization && CalculateAverage(students[i]) == CalculateAverage(students[j]) && students[i].surname > students[j].surname)
+            {
+                swap = true;
+            }
+            if (swap)
+            {
+                Student temp = students[j];
+                students[j] = students[j + 1];
+                students[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int *IndexSort(const Student *students, int N)
+{
+    int *I = new int[N];
+    for (int i = 0; i < N; i++)
+        I[i] = i;
+
+    for (int i = 1; i < N; i++)
+    {
+        int value = I[i];
+        int j = i - 1;
+
+        while (j >= 0 &&
+               (students[I[i]].specialization > students[I[j]].specialization ||
+                students[I[i]].specialization == students[I[j]].specialization && CalculateAverage(students[I[i]]) > CalculateAverage(students[I[j]]) ||
+                students[I[i]].specialization == students[I[j]].specialization && CalculateAverage(students[I[i]]) == CalculateAverage(students[I[j]]) && students[I[i]].surname > students[I[j]].surname))
+        {
+
+            I[j + 1] = I[j];
+            j--;
+        }
+        I[j + 1] = value;
+    }
+    return I;
+}
+
+void PrintIndexSorted(const Student *students, int *I, int N)
+{
+    cout << "=============================================================================================\n";
+    cout << "| № | Прізвище         | Курс | Спеціальність           | Фізика | Математика | Інформатика |\n";
+    cout << "---------------------------------------------------------------------------------------------\n";
+
+    for (int i = 0; i < N; i++)
+    {
+        int idx = I[i];
+        cout << "| " << setw(2) << i + 1 << "| ";
+        cout << setw(18) << left << students[idx].surname;
+        cout << "  | " << setw(4) << right << students[idx].course;
+        cout << " | " << setw(25) << left << specializationStr[students[idx].specialization];
+        cout << "   | " << setw(6) << right << students[idx].physics;
+        cout << " | " << setw(10) << right << students[idx].mathematics;
+        cout << " | " << setw(12) << right << students[idx].informatics << " |\n";
+    }
+    cout << "=============================================================================================\n";
+}
+
+bool BinarySearchStudent(const Student *students, int N, const string &surname, Specialization spec, double avgScore)
+{
+    SortStudentsPhysical(const_cast<Student *>(students), N);
     int left = 0, right = N - 1;
+
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
-        const Student &student = students[mid];
-        double studentAvg = student.averageGrade();
-        if (student.prizv == prizv && studentAvg == avgGrade)
+        double midAvgScore = CalculateAverage(students[mid]);
+
+        if (students[mid].surname == surname && students[mid].specialization == spec && fabs(midAvgScore - avgScore) < 0.01)
             return true;
-        if (student.prizv < prizv || (student.prizv == prizv && studentAvg < avgGrade))
+
+        if (students[mid].surname < surname || (students[mid].surname == surname && students[mid].specialization < spec) ||
+            (students[mid].surname == surname && students[mid].specialization == spec && midAvgScore < avgScore))
             left = mid + 1;
         else
             right = mid - 1;
     }
+
     return false;
-}
-
-// Меню для роботи з програмою
-void Menu()
-{
-    const int MAX_STUDENTS = 100;
-    Student students[MAX_STUDENTS];
-    int N = 0;
-
-    while (true)
-    {
-        cout << "\nМеню:" << endl;
-        cout << "1. Додати студентів" << endl;
-        cout << "2. Фізичне впорядкування студентів" << endl;
-        cout << "3. Створити індексний масив для впорядкування" << endl;
-        cout << "4. Вивести студентів" << endl;
-        cout << "5. Бінарний пошук студента за прізвищем та середнім балом" << endl;
-        cout << "6. Вийти" << endl;
-        cout << "Виберіть дію: ";
-        int choice;
-        cin >> choice;
-
-        if (choice == 1)
-        {
-            cout << "Введіть кількість студентів (максимум " << MAX_STUDENTS << "): ";
-            cin >> N;
-            if (N > MAX_STUDENTS)
-            {
-                cout << "Занадто багато студентів. Введіть кількість до " << MAX_STUDENTS << "." << endl;
-                continue;
-            }
-            CreateStudents(students, N);
-        }
-        else if (choice == 2)
-        {
-            SortStudentsPhysically(students, N);
-            cout << "Студенти впорядковані фізично." << endl;
-        }
-        else if (choice == 3)
-        {
-            int indices[MAX_STUDENTS];
-            CreateIndexArray(indices, students, N);
-            cout << "Індексний масив створений." << endl;
-            for (int i = 0; i < N; ++i)
-            {
-                cout << "Індекс " << i + 1 << ": " << indices[i] << endl;
-            }
-        }
-        else if (choice == 4)
-        {
-            PrintStudents(students, N);
-        }
-        else if (choice == 5)
-        {
-            string prizv;
-            double avgGrade;
-            cout << "Введіть прізвище студента: ";
-            cin >> prizv;
-            cout << "Введіть середній бал: ";
-            cin >> avgGrade;
-            if (BinarySearchStudent(students, N, prizv, avgGrade))
-            {
-                cout << "Студента знайдено." << endl;
-            }
-            else
-            {
-                cout << "Студента не знайдено." << endl;
-            }
-        }
-        else if (choice == 6)
-        {
-            break;
-        }
-        else
-        {
-            cout << "Неправильний вибір. Спробуйте ще раз." << endl;
-        }
-    }
-}
-
-int main()
-{
-    Menu();
-    return 0;
 }

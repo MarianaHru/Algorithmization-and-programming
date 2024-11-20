@@ -17,3 +17,10 @@ target_link_libraries(lab10_1_A_unit_test PRIVATE GTest::gtest GTest::gtest_main
 add_executable(lab10_1_B_unit_test lab10_1_B/lab10_1_B_unit_test.cpp lab10_1_B/lab10_1_B.cpp)
 target_compile_definitions(lab10_1_B_unit_test PRIVATE UNIT_TESTING)
 target_link_libraries(lab10_1_B_unit_test PRIVATE GTest::gtest GTest::gtest_main pthread)
+
+
+
+# Додаємо тести для lab10_2_A
+add_executable(lab10_2_A_unit_test lab10_2_A/lab10_2_A_unit_test.cpp lab10_2_A/lab10_2_A.cpp)
+target_compile_definitions(lab10_2_A_unit_test PRIVATE UNIT_TESTING)
+target_link_libraries(lab10_2_A_unit_test PRIVATE GTest::gtest GTest::gtest_main pthread)

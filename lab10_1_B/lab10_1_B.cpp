@@ -99,87 +99,72 @@ void CreateStudents(Student *students, const int N)
 void PrintStudents(const Student *students, const int N)
 {
     cout << "=============================================================================================================" << endl;
-    cout << "| № | Прізвище      | Курс    | Спеціальність       | Фізика | Математика | Програмування/Методи/Педагогіка |" << endl;
+    cout << "| № | Прізвище      | Курс    | Спеціальність       | Фізика | Математика | Програмування|Методи|Педагогіка |" << endl;
     cout << "--------------------------------------------------------------------------------------------------------------" << endl;
     for (int i = 0; i < N; i++)
     {
         cout << "|" << setw(2) << i + 1
              << " | " << setw(15) << left << students[i].prizv
-             << "| " << setw(5) << right << students[i].kurs
-             << " |    " << setw(27) << left << specialnistStr[students[i].specialnist];
+             << "  |   " << setw(5) << right << students[i].kurs
+             << "   |    " << setw(27) << left << specialnistStr[students[i].specialnist];
 
         // Виведення оцінок залежно від спеціальності
         if (students[i].specialnist == KN || students[i].specialnist == INF)
         {
-            cout << " | " << setw(7) << students[i].grades.kn_inf.ocinka_fizyka
-                 << " | " << setw(10) << students[i].grades.kn_inf.ocinka_matematyka
-                 << "       | " << setw(10) << students[i].grades.kn_inf.ocinka_programming;
+            cout << "| " << setw(7) << students[i].grades.kn_inf.ocinka_fizyka
+                 << "| " << setw(10) << students[i].grades.kn_inf.ocinka_matematyka
+                 << "| " << setw(10) << students[i].grades.kn_inf.ocinka_programming;
         }
         else if (students[i].specialnist == ME)
         {
-            cout << " | " << setw(7) << students[i].grades.me.ocinka_fizyka
-                 << " | " << setw(10) << students[i].grades.me.ocinka_matematyka
-                 << "      | " << setw(10) << students[i].grades.me.ocinka_chiselni_metody;
+            cout << "| " << setw(7) << students[i].grades.me.ocinka_fizyka
+                 << "| " << setw(10) << students[i].grades.me.ocinka_matematyka
+                 << "| " << setw(10) << students[i].grades.me.ocinka_chiselni_metody;
         }
         else if (students[i].specialnist == FI || students[i].specialnist == TN)
         {
-            cout << " | " << setw(7) << students[i].grades.fi_tn.ocinka_fizyka
-                 << " | " << setw(10) << students[i].grades.fi_tn.ocinka_matematyka
-                 << "       | " << setw(10) << students[i].grades.fi_tn.ocinka_pedagogika;
+            cout << "| " << setw(7) << students[i].grades.fi_tn.ocinka_fizyka
+                 << "| " << setw(10) << students[i].grades.fi_tn.ocinka_matematyka
+                 << "|   " << setw(10) << students[i].grades.fi_tn.ocinka_pedagogika;
         }
-        cout << "                 |" << endl;
+        cout << "                      |"
+             << endl;
     }
-    cout << "===============================================================================================================" << endl;
+    cout << "=============================================================================================================" << endl;
 }
 
 // Функція для виведення прізвищ студентів, які навчаються без трійок
+
 void PrintStudentsWithoutLowGrades(const Student *students, const int N)
 {
-    cout << "Студенти, які вчаться без трійок (на 'відмінно' і 'добре'):" << endl;
+    cout << "студенти, які навчаються без трійок:" << endl;
+    bool hasExcellent = false; // Змінна для перевірки, чи є хоч один відмінник
+
     for (int i = 0; i < N; i++)
     {
-        bool withoutLowGrades = false;
-        if (students[i].specialnist == KN || students[i].specialnist == INF)
-        {
-            withoutLowGrades = students[i].grades.kn_inf.ocinka_fizyka >= 4 &&
-                               students[i].grades.kn_inf.ocinka_matematyka >= 4 &&
-                               students[i].grades.kn_inf.ocinka_programming >= 4;
-        }
-        else if (students[i].specialnist == ME)
-        {
-            withoutLowGrades = students[i].grades.me.ocinka_fizyka >= 4 &&
-                               students[i].grades.me.ocinka_matematyka >= 4 &&
-                               students[i].grades.me.ocinka_chiselni_metody >= 4;
-        }
-        else if (students[i].specialnist == FI || students[i].specialnist == TN)
-        {
-            withoutLowGrades = students[i].grades.fi_tn.ocinka_fizyka >= 4 &&
-                               students[i].grades.fi_tn.ocinka_matematyka >= 4 &&
-                               students[i].grades.fi_tn.ocinka_pedagogika >= 4;
-        }
+        bool isExcellent = (students[i].grades.kn_inf.ocinka_programming >= 4 && students[i].grades.me.ocinka_chiselni_metody >= 4 && students[i].grades.fi_tn.ocinka_pedagogika >= 4);
 
-        if (withoutLowGrades)
+        if (isExcellent)
         {
             cout << " - " << students[i].prizv << endl;
+            hasExcellent = true;
         }
+    }
+
+    if (!hasExcellent)
+    {
+        cout << "Немає студентів, які вчаться на відмінно." << endl;
     }
 }
 
 // Функція для підрахунку студентів, які отримали "5" з фізики
+
 int CountStudentsWithExcellentPhysics(const Student *students, const int N)
 {
     int count = 0;
     for (int i = 0; i < N; i++)
     {
-        if ((students[i].specialnist == KN || students[i].specialnist == INF) && students[i].grades.kn_inf.ocinka_fizyka == 5)
-        {
-            count++;
-        }
-        else if (students[i].specialnist == ME && students[i].grades.me.ocinka_fizyka == 5)
-        {
-            count++;
-        }
-        else if ((students[i].specialnist == FI || students[i].specialnist == TN) && students[i].grades.fi_tn.ocinka_fizyka == 5)
+        if (students[i].grades.kn_inf.ocinka_fizyka == 5)
         {
             count++;
         }

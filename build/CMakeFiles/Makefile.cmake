@@ -62,4 +62,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/lab10_1_A_unit_test.dir/DependInfo.cmake"
   "CMakeFiles/lab10_1_B_unit_test.dir/DependInfo.cmake"
+  "CMakeFiles/lab10_2_A_unit_test.dir/DependInfo.cmake"
   )
