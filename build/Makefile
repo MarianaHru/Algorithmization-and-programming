@@ -117,187 +117,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab10_1_A_unit_test
+# Target rules for targets named lab10_3_unit_test
 
 # Build rule for target.
-lab10_1_A_unit_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab10_1_A_unit_test
-.PHONY : lab10_1_A_unit_test
+lab10_3_unit_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab10_3_unit_test
+.PHONY : lab10_3_unit_test
 
 # fast build rule for target.
-lab10_1_A_unit_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/build
-.PHONY : lab10_1_A_unit_test/fast
+lab10_3_unit_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/build
+.PHONY : lab10_3_unit_test/fast
 
-#=============================================================================
-# Target rules for targets named lab10_1_B_unit_test
-
-# Build rule for target.
-lab10_1_B_unit_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab10_1_B_unit_test
-.PHONY : lab10_1_B_unit_test
-
-# fast build rule for target.
-lab10_1_B_unit_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/build
-.PHONY : lab10_1_B_unit_test/fast
-
-#=============================================================================
-# Target rules for targets named lab10_2_A_unit_test
-
-# Build rule for target.
-lab10_2_A_unit_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab10_2_A_unit_test
-.PHONY : lab10_2_A_unit_test
-
-# fast build rule for target.
-lab10_2_A_unit_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/build
-.PHONY : lab10_2_A_unit_test/fast
-
-lab10_1_A/lab10_1_A.o: lab10_1_A/lab10_1_A.cpp.o
-.PHONY : lab10_1_A/lab10_1_A.o
+lab10_3/lab10_3.o: lab10_3/lab10_3.cpp.o
+.PHONY : lab10_3/lab10_3.o
 
 # target to build an object file
-lab10_1_A/lab10_1_A.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/lab10_1_A/lab10_1_A.cpp.o
-.PHONY : lab10_1_A/lab10_1_A.cpp.o
+lab10_3/lab10_3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/lab10_3/lab10_3.cpp.o
+.PHONY : lab10_3/lab10_3.cpp.o
 
-lab10_1_A/lab10_1_A.i: lab10_1_A/lab10_1_A.cpp.i
-.PHONY : lab10_1_A/lab10_1_A.i
+lab10_3/lab10_3.i: lab10_3/lab10_3.cpp.i
+.PHONY : lab10_3/lab10_3.i
 
 # target to preprocess a source file
-lab10_1_A/lab10_1_A.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/lab10_1_A/lab10_1_A.cpp.i
-.PHONY : lab10_1_A/lab10_1_A.cpp.i
+lab10_3/lab10_3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/lab10_3/lab10_3.cpp.i
+.PHONY : lab10_3/lab10_3.cpp.i
 
-lab10_1_A/lab10_1_A.s: lab10_1_A/lab10_1_A.cpp.s
-.PHONY : lab10_1_A/lab10_1_A.s
+lab10_3/lab10_3.s: lab10_3/lab10_3.cpp.s
+.PHONY : lab10_3/lab10_3.s
 
 # target to generate assembly for a file
-lab10_1_A/lab10_1_A.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/lab10_1_A/lab10_1_A.cpp.s
-.PHONY : lab10_1_A/lab10_1_A.cpp.s
+lab10_3/lab10_3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/lab10_3/lab10_3.cpp.s
+.PHONY : lab10_3/lab10_3.cpp.s
 
-lab10_1_A/lab10_1_A_unit_test.o: lab10_1_A/lab10_1_A_unit_test.cpp.o
-.PHONY : lab10_1_A/lab10_1_A_unit_test.o
+lab10_3/lab10_3_unit_test.o: lab10_3/lab10_3_unit_test.cpp.o
+.PHONY : lab10_3/lab10_3_unit_test.o
 
 # target to build an object file
-lab10_1_A/lab10_1_A_unit_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/lab10_1_A/lab10_1_A_unit_test.cpp.o
-.PHONY : lab10_1_A/lab10_1_A_unit_test.cpp.o
+lab10_3/lab10_3_unit_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/lab10_3/lab10_3_unit_test.cpp.o
+.PHONY : lab10_3/lab10_3_unit_test.cpp.o
 
-lab10_1_A/lab10_1_A_unit_test.i: lab10_1_A/lab10_1_A_unit_test.cpp.i
-.PHONY : lab10_1_A/lab10_1_A_unit_test.i
-
-# target to preprocess a source file
-lab10_1_A/lab10_1_A_unit_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/lab10_1_A/lab10_1_A_unit_test.cpp.i
-.PHONY : lab10_1_A/lab10_1_A_unit_test.cpp.i
-
-lab10_1_A/lab10_1_A_unit_test.s: lab10_1_A/lab10_1_A_unit_test.cpp.s
-.PHONY : lab10_1_A/lab10_1_A_unit_test.s
-
-# target to generate assembly for a file
-lab10_1_A/lab10_1_A_unit_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_A_unit_test.dir/build.make CMakeFiles/lab10_1_A_unit_test.dir/lab10_1_A/lab10_1_A_unit_test.cpp.s
-.PHONY : lab10_1_A/lab10_1_A_unit_test.cpp.s
-
-lab10_1_B/lab10_1_B.o: lab10_1_B/lab10_1_B.cpp.o
-.PHONY : lab10_1_B/lab10_1_B.o
-
-# target to build an object file
-lab10_1_B/lab10_1_B.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/lab10_1_B/lab10_1_B.cpp.o
-.PHONY : lab10_1_B/lab10_1_B.cpp.o
-
-lab10_1_B/lab10_1_B.i: lab10_1_B/lab10_1_B.cpp.i
-.PHONY : lab10_1_B/lab10_1_B.i
+lab10_3/lab10_3_unit_test.i: lab10_3/lab10_3_unit_test.cpp.i
+.PHONY : lab10_3/lab10_3_unit_test.i
 
 # target to preprocess a source file
-lab10_1_B/lab10_1_B.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/lab10_1_B/lab10_1_B.cpp.i
-.PHONY : lab10_1_B/lab10_1_B.cpp.i
+lab10_3/lab10_3_unit_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/lab10_3/lab10_3_unit_test.cpp.i
+.PHONY : lab10_3/lab10_3_unit_test.cpp.i
 
-lab10_1_B/lab10_1_B.s: lab10_1_B/lab10_1_B.cpp.s
-.PHONY : lab10_1_B/lab10_1_B.s
-
-# target to generate assembly for a file
-lab10_1_B/lab10_1_B.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/lab10_1_B/lab10_1_B.cpp.s
-.PHONY : lab10_1_B/lab10_1_B.cpp.s
-
-lab10_1_B/lab10_1_B_unit_test.o: lab10_1_B/lab10_1_B_unit_test.cpp.o
-.PHONY : lab10_1_B/lab10_1_B_unit_test.o
-
-# target to build an object file
-lab10_1_B/lab10_1_B_unit_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/lab10_1_B/lab10_1_B_unit_test.cpp.o
-.PHONY : lab10_1_B/lab10_1_B_unit_test.cpp.o
-
-lab10_1_B/lab10_1_B_unit_test.i: lab10_1_B/lab10_1_B_unit_test.cpp.i
-.PHONY : lab10_1_B/lab10_1_B_unit_test.i
-
-# target to preprocess a source file
-lab10_1_B/lab10_1_B_unit_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/lab10_1_B/lab10_1_B_unit_test.cpp.i
-.PHONY : lab10_1_B/lab10_1_B_unit_test.cpp.i
-
-lab10_1_B/lab10_1_B_unit_test.s: lab10_1_B/lab10_1_B_unit_test.cpp.s
-.PHONY : lab10_1_B/lab10_1_B_unit_test.s
+lab10_3/lab10_3_unit_test.s: lab10_3/lab10_3_unit_test.cpp.s
+.PHONY : lab10_3/lab10_3_unit_test.s
 
 # target to generate assembly for a file
-lab10_1_B/lab10_1_B_unit_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_1_B_unit_test.dir/build.make CMakeFiles/lab10_1_B_unit_test.dir/lab10_1_B/lab10_1_B_unit_test.cpp.s
-.PHONY : lab10_1_B/lab10_1_B_unit_test.cpp.s
-
-lab10_2_A/lab10_2_A.o: lab10_2_A/lab10_2_A.cpp.o
-.PHONY : lab10_2_A/lab10_2_A.o
-
-# target to build an object file
-lab10_2_A/lab10_2_A.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/lab10_2_A/lab10_2_A.cpp.o
-.PHONY : lab10_2_A/lab10_2_A.cpp.o
-
-lab10_2_A/lab10_2_A.i: lab10_2_A/lab10_2_A.cpp.i
-.PHONY : lab10_2_A/lab10_2_A.i
-
-# target to preprocess a source file
-lab10_2_A/lab10_2_A.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/lab10_2_A/lab10_2_A.cpp.i
-.PHONY : lab10_2_A/lab10_2_A.cpp.i
-
-lab10_2_A/lab10_2_A.s: lab10_2_A/lab10_2_A.cpp.s
-.PHONY : lab10_2_A/lab10_2_A.s
-
-# target to generate assembly for a file
-lab10_2_A/lab10_2_A.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/lab10_2_A/lab10_2_A.cpp.s
-.PHONY : lab10_2_A/lab10_2_A.cpp.s
-
-lab10_2_A/lab10_2_A_unit_test.o: lab10_2_A/lab10_2_A_unit_test.cpp.o
-.PHONY : lab10_2_A/lab10_2_A_unit_test.o
-
-# target to build an object file
-lab10_2_A/lab10_2_A_unit_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/lab10_2_A/lab10_2_A_unit_test.cpp.o
-.PHONY : lab10_2_A/lab10_2_A_unit_test.cpp.o
-
-lab10_2_A/lab10_2_A_unit_test.i: lab10_2_A/lab10_2_A_unit_test.cpp.i
-.PHONY : lab10_2_A/lab10_2_A_unit_test.i
-
-# target to preprocess a source file
-lab10_2_A/lab10_2_A_unit_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/lab10_2_A/lab10_2_A_unit_test.cpp.i
-.PHONY : lab10_2_A/lab10_2_A_unit_test.cpp.i
-
-lab10_2_A/lab10_2_A_unit_test.s: lab10_2_A/lab10_2_A_unit_test.cpp.s
-.PHONY : lab10_2_A/lab10_2_A_unit_test.s
-
-# target to generate assembly for a file
-lab10_2_A/lab10_2_A_unit_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_2_A_unit_test.dir/build.make CMakeFiles/lab10_2_A_unit_test.dir/lab10_2_A/lab10_2_A_unit_test.cpp.s
-.PHONY : lab10_2_A/lab10_2_A_unit_test.cpp.s
+lab10_3/lab10_3_unit_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab10_3_unit_test.dir/build.make CMakeFiles/lab10_3_unit_test.dir/lab10_3/lab10_3_unit_test.cpp.s
+.PHONY : lab10_3/lab10_3_unit_test.cpp.s
 
 # Help Target
 help:
@@ -307,27 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... lab10_1_A_unit_test"
-	@echo "... lab10_1_B_unit_test"
-	@echo "... lab10_2_A_unit_test"
-	@echo "... lab10_1_A/lab10_1_A.o"
-	@echo "... lab10_1_A/lab10_1_A.i"
-	@echo "... lab10_1_A/lab10_1_A.s"
-	@echo "... lab10_1_A/lab10_1_A_unit_test.o"
-	@echo "... lab10_1_A/lab10_1_A_unit_test.i"
-	@echo "... lab10_1_A/lab10_1_A_unit_test.s"
-	@echo "... lab10_1_B/lab10_1_B.o"
-	@echo "... lab10_1_B/lab10_1_B.i"
-	@echo "... lab10_1_B/lab10_1_B.s"
-	@echo "... lab10_1_B/lab10_1_B_unit_test.o"
-	@echo "... lab10_1_B/lab10_1_B_unit_test.i"
-	@echo "... lab10_1_B/lab10_1_B_unit_test.s"
-	@echo "... lab10_2_A/lab10_2_A.o"
-	@echo "... lab10_2_A/lab10_2_A.i"
-	@echo "... lab10_2_A/lab10_2_A.s"
-	@echo "... lab10_2_A/lab10_2_A_unit_test.o"
-	@echo "... lab10_2_A/lab10_2_A_unit_test.i"
-	@echo "... lab10_2_A/lab10_2_A_unit_test.s"
+	@echo "... lab10_3_unit_test"
+	@echo "... lab10_3/lab10_3.o"
+	@echo "... lab10_3/lab10_3.i"
+	@echo "... lab10_3/lab10_3.s"
+	@echo "... lab10_3/lab10_3_unit_test.o"
+	@echo "... lab10_3/lab10_3_unit_test.i"
+	@echo "... lab10_3/lab10_3_unit_test.s"
 .PHONY : help
 
 

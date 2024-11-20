@@ -224,9 +224,32 @@ void PrintIndexSorted(const Student *students, int *I, int N)
     cout << "=============================================================================================\n";
 }
 
+// bool BinarySearchStudent(const Student *students, int N, const string &surname, Specialization spec, double avgScore)
+// {
+//     SortStudentsPhysical(const_cast<Student *>(students), N);
+//     int left = 0, right = N - 1;
+
+//     while (left <= right)
+//     {
+//         int mid = left + (right - left) / 2;
+//         double midAvgScore = CalculateAverage(students[mid]);
+
+//         if (students[mid].surname == surname && students[mid].specialization == spec && fabs(midAvgScore - avgScore) < 0.01)
+//             return true;
+
+//         if (students[mid].surname < surname || (students[mid].surname == surname && students[mid].specialization < spec) ||
+//             (students[mid].surname == surname && students[mid].specialization == spec && midAvgScore < avgScore))
+//             left = mid + 1;
+//         else
+//             right = mid - 1;
+//     }
+
+//     return false;
+// }
+
 bool BinarySearchStudent(const Student *students, int N, const string &surname, Specialization spec, double avgScore)
 {
-    SortStudentsPhysical(const_cast<Student *>(students), N);
+    SortStudentsPhysical(const_cast<Student *>(students), N); // Перевірка впорядкування
     int left = 0, right = N - 1;
 
     while (left <= right)
@@ -234,15 +257,25 @@ bool BinarySearchStudent(const Student *students, int N, const string &surname, 
         int mid = left + (right - left) / 2;
         double midAvgScore = CalculateAverage(students[mid]);
 
-        if (students[mid].surname == surname && students[mid].specialization == spec && fabs(midAvgScore - avgScore) < 0.01)
-            return true;
+        // Порівняння у тому ж порядку, що й у сортуванні
+        if (students[mid].specialization == spec &&
+            fabs(midAvgScore - avgScore) < 0.01 &&
+            students[mid].surname == surname)
+        {
+            return true; // Знайдено
+        }
 
-        if (students[mid].surname < surname || (students[mid].surname == surname && students[mid].specialization < spec) ||
-            (students[mid].surname == surname && students[mid].specialization == spec && midAvgScore < avgScore))
-            left = mid + 1;
+        if (students[mid].specialization < spec ||
+            (students[mid].specialization == spec && midAvgScore < avgScore) ||
+            (students[mid].specialization == spec && fabs(midAvgScore - avgScore) < 0.01 && students[mid].surname < surname))
+        {
+            left = mid + 1; // Шукаємо далі праворуч
+        }
         else
-            right = mid - 1;
+        {
+            right = mid - 1; // Шукаємо далі ліворуч
+        }
     }
 
-    return false;
+    return false; // Не знайдено
 }

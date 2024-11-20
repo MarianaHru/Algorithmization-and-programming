@@ -1,5 +1,3 @@
-/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab10_1_A_unit_test.dir
-/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab10_1_B_unit_test.dir
-/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab10_2_A_unit_test.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab10_3_unit_test.dir
 /Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/edit_cache.dir
 /Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/rebuild_cache.dir
