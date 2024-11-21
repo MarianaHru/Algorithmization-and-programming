@@ -1,0 +1,4 @@
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab11_1_2_unit_test.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab11_2_unit_test.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/edit_cache.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/rebuild_cache.dir
