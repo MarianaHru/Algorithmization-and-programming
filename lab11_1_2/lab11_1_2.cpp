@@ -15,15 +15,14 @@ bool FindThirdComma(const string &line, int &charPosition)
             commaCount++;
             if (commaCount == 3)
             {
-                charPosition = static_cast<int>(i + 1); // Позиція третьої коми (1-based index)
-                return true;                            // Знайдено
+                charPosition = static_cast<int>(i + 1); // Позиція третьої коми
+                return true;
             }
         }
     }
-    return false; // Не знайдено
+    return false;
 }
 
-// Основна функція для обробки файлу
 void ProcessFile(const string &filename)
 {
     ifstream file(filename);
@@ -66,11 +65,9 @@ int main()
 {
     string filename;
 
-    // Запитати користувача про назву файлу
     cout << "Введіть назву текстового файлу (з повним шляхом, якщо файл не в поточній директорії): ";
     cin >> filename;
 
-    // Обробка файлу
     ProcessFile(filename);
 
     return 0;
