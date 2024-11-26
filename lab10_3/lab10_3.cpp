@@ -273,7 +273,6 @@
 
 using namespace std;
 
-// Структура для зберігання інформації про мешканців
 struct Resident
 {
     string surname;
@@ -378,31 +377,54 @@ void edit_resident(Resident residents[], int count, const string &surname)
 }
 
 // Функція для пошуку мешканця за прізвищем
+
 void find_resident(const Resident residents[], int count, const string &surname)
 {
+    int count_matches = 0;
     int match_index = -1;
+
+    // Пошук усіх мешканців із заданим прізвищем
     for (int i = 0; i < count; ++i)
     {
         if (residents[i].surname == surname)
         {
+            ++count_matches;
             match_index = i;
-            break;
         }
     }
 
-    if (match_index != -1)
-    {
-        cout << "Прізвище: " << residents[match_index].surname << "\n";
-        cout << "Ініціали: " << residents[match_index].initials << "\n";
-        cout << "Номер кімнати: " << residents[match_index].room_number << "\n";
-    }
-    else
+    if (count_matches == 0)
     {
         cout << "Мешканця з таким прізвищем не знайдено.\n";
     }
+    else if (count_matches == 1)
+    {
+        cout << "Прізвище: " << residents[match_index].surname << "\n";
+        cout << "Номер кімнати: " << residents[match_index].room_number << "\n";
+    }
+    else // Кілька мешканців із таким прізвищем
+    {
+        cout << "Знайдено кілька мешканців із прізвищем " << surname << ". Введіть ініціали для уточнення: ";
+        string initials;
+        cin >> initials;
+        bool found = false;
+        for (int i = 0; i < count; ++i)
+        {
+            if (residents[i].surname == surname && residents[i].initials == initials)
+            {
+                cout << "Прізвище: " << residents[i].surname << "\n";
+                cout << "Номер кімнати: " << residents[i].room_number << "\n";
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            cout << "Мешканця з такими ініціалами не знайдено.\n";
+        }
+    }
 }
 
-// Функція для відображення меню
 void display_menu()
 {
     cout << "\nМеню:\n";
@@ -417,7 +439,6 @@ void display_menu()
     cout << "Виберіть пункт: ";
 }
 
-// Функція для збереження даних у текстовий файл
 void saveToFile(const Resident *residents, int size)
 {
     string filename;

@@ -144,8 +144,8 @@ void PrintStudents(const Student *students, int N)
         cout << setw(15) << left << students[i].surname;
         cout << "    | " << setw(4) << right << students[i].course;
         cout << " | " << setw(18) << left << specializationStr[students[i].specialization];
-        cout << "   | " << setw(6) << right << students[i].physics;
-        cout << " | " << setw(10) << right << students[i].mathematics;
+        cout << "        | " << setw(9) << right << students[i].physics;
+        cout << "        | " << setw(10) << right << students[i].mathematics;
         cout << " | " << setw(11) << right << students[i].informatics << " |\n";
     }
     cout << "=====================================================================================\n";
@@ -224,32 +224,9 @@ void PrintIndexSorted(const Student *students, int *I, int N)
     cout << "=============================================================================================\n";
 }
 
-// bool BinarySearchStudent(const Student *students, int N, const string &surname, Specialization spec, double avgScore)
-// {
-//     SortStudentsPhysical(const_cast<Student *>(students), N);
-//     int left = 0, right = N - 1;
-
-//     while (left <= right)
-//     {
-//         int mid = left + (right - left) / 2;
-//         double midAvgScore = CalculateAverage(students[mid]);
-
-//         if (students[mid].surname == surname && students[mid].specialization == spec && fabs(midAvgScore - avgScore) < 0.01)
-//             return true;
-
-//         if (students[mid].surname < surname || (students[mid].surname == surname && students[mid].specialization < spec) ||
-//             (students[mid].surname == surname && students[mid].specialization == spec && midAvgScore < avgScore))
-//             left = mid + 1;
-//         else
-//             right = mid - 1;
-//     }
-
-//     return false;
-// }
-
 bool BinarySearchStudent(const Student *students, int N, const string &surname, Specialization spec, double avgScore)
 {
-    SortStudentsPhysical(const_cast<Student *>(students), N); // Перевірка впорядкування
+    SortStudentsPhysical(const_cast<Student *>(students), N);
     int left = 0, right = N - 1;
 
     while (left <= right)
@@ -257,25 +234,24 @@ bool BinarySearchStudent(const Student *students, int N, const string &surname, 
         int mid = left + (right - left) / 2;
         double midAvgScore = CalculateAverage(students[mid]);
 
-        // Порівняння у тому ж порядку, що й у сортуванні
         if (students[mid].specialization == spec &&
             fabs(midAvgScore - avgScore) < 0.01 &&
             students[mid].surname == surname)
         {
-            return true; // Знайдено
+            return true;
         }
 
         if (students[mid].specialization < spec ||
             (students[mid].specialization == spec && midAvgScore < avgScore) ||
             (students[mid].specialization == spec && fabs(midAvgScore - avgScore) < 0.01 && students[mid].surname < surname))
         {
-            left = mid + 1; // Шукаємо далі праворуч
+            left = mid + 1;
         }
         else
         {
-            right = mid - 1; // Шукаємо далі ліворуч
+            right = mid - 1;
         }
     }
 
-    return false; // Не знайдено
+    return false;
 }
