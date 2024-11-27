@@ -1,26 +1,14 @@
 [
 {
   "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
-  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab11_1_2_unit_test.dir/lab11_1_2/lab11_1_2_unit_test.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_1_2/lab11_1_2_unit_test.cpp",
-  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_1_2/lab11_1_2_unit_test.cpp",
-  "output": "CMakeFiles/lab11_1_2_unit_test.dir/lab11_1_2/lab11_1_2_unit_test.cpp.o"
+  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab11_3_unit_test.dir/lab11_3/lab11_3_unit_test.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_3/lab11_3_unit_test.cpp",
+  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_3/lab11_3_unit_test.cpp",
+  "output": "CMakeFiles/lab11_3_unit_test.dir/lab11_3/lab11_3_unit_test.cpp.o"
 },
 {
   "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
-  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab11_1_2_unit_test.dir/lab11_1_2/lab11_1_2.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_1_2/lab11_1_2.cpp",
-  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_1_2/lab11_1_2.cpp",
-  "output": "CMakeFiles/lab11_1_2_unit_test.dir/lab11_1_2/lab11_1_2.cpp.o"
-},
-{
-  "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
-  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab11_2_unit_test.dir/lab11_2/lab11_2_unit_test.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_2/lab11_2_unit_test.cpp",
-  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_2/lab11_2_unit_test.cpp",
-  "output": "CMakeFiles/lab11_2_unit_test.dir/lab11_2/lab11_2_unit_test.cpp.o"
-},
-{
-  "directory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build",
-  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab11_2_unit_test.dir/lab11_2/lab11_2.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_2/lab11_2.cpp",
-  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_2/lab11_2.cpp",
-  "output": "CMakeFiles/lab11_2_unit_test.dir/lab11_2/lab11_2.cpp.o"
+  "command": "/usr/bin/clang++ -DUNIT_TESTING -isystem /Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/installed/x64-osx/include -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/lab11_3_unit_test.dir/lab11_3/lab11_3.cpp.o -c /Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_3/lab11_3.cpp",
+  "file": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/lab11_3/lab11_3.cpp",
+  "output": "CMakeFiles/lab11_3_unit_test.dir/lab11_3/lab11_3.cpp.o"
 }
 ]
