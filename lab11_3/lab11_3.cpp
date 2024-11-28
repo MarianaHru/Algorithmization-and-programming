@@ -1,11 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <string>
 
 using namespace std;
 
-// Структура для зберігання інформації про мешканців
 struct Resident
 {
     string surname;
@@ -13,8 +11,10 @@ struct Resident
     int room_number;
 };
 
+const int MAX_RESIDENTS = 100;
+
 // Функція для завантаження мешканців із файлу
-void loadResidents(const string &filename, vector<Resident> &residents)
+void loadResidents(const string &filename, Resident residents[], int &count)
 {
     ifstream file(filename);
 
@@ -37,33 +37,39 @@ void loadResidents(const string &filename, vector<Resident> &residents)
     }
 
     // Завантажуємо дані з файлу
-    residents.clear();
-    Resident resident;
-    while (file >> resident.surname >> resident.initials >> resident.room_number)
+    count = 0;
+    while (file >> residents[count].surname >> residents[count].initials >> residents[count].room_number)
     {
-        residents.push_back(resident);
+        count++;
+        if (count >= MAX_RESIDENTS)
+        {
+            cout << "Досягнуто максимального розміру масиву мешканців." << endl;
+            break;
+        }
     }
 
     file.close();
     cout << "Дані успішно завантажені з файлу." << endl;
 }
 
-void findResident(const vector<Resident> &residents, const string &surname)
+void findResident(const Resident residents[], int count, const string &surname)
 {
-    vector<Resident> matches;
-    for (const auto &resident : residents)
+    Resident matches[MAX_RESIDENTS];
+    int matchCount = 0;
+
+    for (int i = 0; i < count; i++)
     {
-        if (resident.surname == surname)
+        if (residents[i].surname == surname)
         {
-            matches.push_back(resident);
+            matches[matchCount++] = residents[i];
         }
     }
 
-    if (matches.empty())
+    if (matchCount == 0)
     {
         cout << "Мешканця з прізвищем " << surname << " не знайдено." << endl;
     }
-    else if (matches.size() == 1)
+    else if (matchCount == 1)
     {
         cout << "Прізвище: " << matches[0].surname << ", Ініціали: " << matches[0].initials
              << ", Номер кімнати: " << matches[0].room_number << endl;
@@ -75,12 +81,12 @@ void findResident(const vector<Resident> &residents, const string &surname)
         string initials;
         cin >> initials;
         bool found = false;
-        for (const auto &resident : matches)
+        for (int i = 0; i < matchCount; i++)
         {
-            if (resident.initials == initials)
+            if (matches[i].initials == initials)
             {
-                cout << "Прізвище: " << resident.surname << ", Ініціали: " << resident.initials
-                     << ", Номер кімнати: " << resident.room_number << endl;
+                cout << "Прізвище: " << matches[i].surname << ", Ініціали: " << matches[i].initials
+                     << ", Номер кімнати: " << matches[i].room_number << endl;
                 found = true;
                 break;
             }
@@ -92,8 +98,31 @@ void findResident(const vector<Resident> &residents, const string &surname)
     }
 }
 
-void addResident(vector<Resident> &residents)
+void appendResidentToFile(const string &filename, const Resident &resident)
 {
+    ofstream file(filename, ios::app); // Відкриваємо файл у режимі доповнення
+    if (!file)
+    {
+        cout << "Помилка відкриття файлу для доповнення." << endl;
+        return;
+    }
+
+    file << resident.surname << " "
+         << resident.initials << " "
+         << resident.room_number << endl;
+
+    file.close();
+    cout << "Мешканця успішно додано до файлу." << endl;
+}
+
+void addResident(Resident residents[], int &count, const string &filename)
+{
+    if (count >= MAX_RESIDENTS)
+    {
+        cout << "Досягнуто максимального розміру масиву мешканців." << endl;
+        return;
+    }
+
     Resident resident;
     cout << "Введіть прізвище мешканця: ";
     cin >> resident.surname;
@@ -101,29 +130,31 @@ void addResident(vector<Resident> &residents)
     cin >> resident.initials;
     cout << "Введіть номер кімнати мешканця: ";
     cin >> resident.room_number;
-    residents.push_back(resident);
-    cout << "Мешканця додано." << endl;
+
+    residents[count++] = resident;
+    appendResidentToFile(filename, resident); // Додаємо мешканця до файлу
 }
 
 // Функція для відображення всіх мешканців
-void displayResidents(const vector<Resident> &residents)
+void displayResidents(const Resident residents[], int count)
 {
-    if (residents.empty())
+    if (count == 0)
     {
         cout << "Немає даних про мешканців." << endl;
         return;
     }
 
     cout << "Список мешканців готелю:" << endl;
-    for (const auto &resident : residents)
+    for (int i = 0; i < count; i++)
     {
-        cout << "Прізвище: " << resident.surname
-             << ", Ініціали: " << resident.initials
-             << ", Номер кімнати: " << resident.room_number << endl;
+        cout << "Прізвище: " << residents[i].surname
+             << ", Ініціали: " << residents[i].initials
+             << ", Номер кімнати: " << residents[i].room_number << endl;
     }
 }
 
-void saveResidents(const string &filename, const vector<Resident> &residents)
+// Функція для збереження всіх мешканців у файл
+void saveResidents(const string &filename, const Resident residents[], int count)
 {
     ofstream file(filename);
     if (!file)
@@ -132,9 +163,9 @@ void saveResidents(const string &filename, const vector<Resident> &residents)
         return;
     }
 
-    for (const auto &resident : residents)
+    for (int i = 0; i < count; i++)
     {
-        file << resident.surname << " " << resident.initials << " " << resident.room_number << endl;
+        file << residents[i].surname << " " << residents[i].initials << " " << residents[i].room_number << endl;
     }
 
     file.close();
@@ -145,14 +176,15 @@ void saveResidents(const string &filename, const vector<Resident> &residents)
 
 int main()
 {
-    vector<Resident> residents;
+    Resident residents[MAX_RESIDENTS];
+    int residentCount = 0;
     string filename;
 
     cout << "Введіть ім'я файлу: ";
     cin >> filename;
 
     // Завантажуємо або створюємо файл
-    loadResidents(filename, residents);
+    loadResidents(filename, residents, residentCount);
 
     bool running = true;
     while (running)
@@ -172,24 +204,24 @@ int main()
         switch (choice)
         {
         case 1:
-            loadResidents(filename, residents);
+            loadResidents(filename, residents, residentCount);
             break;
         case 2:
         {
             string surname;
             cout << "Введіть прізвище для пошуку: ";
             cin >> surname;
-            findResident(residents, surname);
+            findResident(residents, residentCount, surname);
             break;
         }
         case 3:
-            addResident(residents);
+            addResident(residents, residentCount, filename);
             break;
         case 4:
-            displayResidents(residents);
+            displayResidents(residents, residentCount);
             break;
         case 5:
-            saveResidents(filename, residents);
+            saveResidents(filename, residents, residentCount);
             break;
         case 6:
             running = false;
