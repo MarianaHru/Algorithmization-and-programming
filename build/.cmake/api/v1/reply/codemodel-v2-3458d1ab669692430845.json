@@ -1,0 +1,105 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MyProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "lab8_1_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab8_1_app-Debug-41b9eef2a435eff7a83b.json",
+					"name" : "lab8_1_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lab8_1_unit_test_char::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab8_1_unit_test_char-Debug-8772e452198cbbb4f123.json",
+					"name" : "lab8_1_unit_test_char",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lab8_1_unit_test_it::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab8_1_unit_test_it-Debug-a91bfcc9579f7c6a0958.json",
+					"name" : "lab8_1_unit_test_it",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lab8_1_unit_test_rec::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab8_1_unit_test_rec-Debug-aa428915dcf84d5152a1.json",
+					"name" : "lab8_1_unit_test_rec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lab8_1_unit_test_str::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab8_1_unit_test_str-Debug-eabe529074e2ec0844fe.json",
+					"name" : "lab8_1_unit_test_str",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lab8_2_unit_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab8_2_unit_test-Debug-964529a48e4263dfd632.json",
+					"name" : "lab8_2_unit_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/tarasgrudzinskij/Documents/semestr_1/\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0443\u0432\u0430\u043d\u043d\u044f/build",
+		"source" : "/Users/tarasgrudzinskij/Documents/semestr_1/\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0443\u0432\u0430\u043d\u043d\u044f"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

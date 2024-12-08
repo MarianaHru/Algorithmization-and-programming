@@ -1,0 +1,8 @@
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab8_1_unit_test_it.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab8_1_app.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab8_1_unit_test_rec.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab8_1_unit_test_str.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab8_1_unit_test_char.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/lab8_2_unit_test.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/edit_cache.dir
+/Users/tarasgrudzinskij/Documents/semestr_1/програмування/build/CMakeFiles/rebuild_cache.dir
