@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "/Users/tarasgrudzinskij/Documents/semestr_1/програмування/vcpkg/ports/7zip",
+    "files.associations": {
+        "ostream": "cpp"
+    }
+}
