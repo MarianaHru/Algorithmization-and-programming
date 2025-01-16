@@ -1,10 +1,10 @@
+
 // #include <iostream>
 // #include <fstream>
 // #include <string>
 
 // using namespace std;
 
-// // Function to create the input file with given data
 // void createInputFile(const string &filename)
 // {
 //     ofstream outFile(filename, ios::binary);
@@ -15,12 +15,11 @@
 //     }
 //     string data;
 //     cout << "Введіть символи для запису в файл (без пробілів): ";
-//     cin >> data;
-//     outFile.write(data.c_str(), data.size());
+//     cin >> data;                              // Зчитуємо символи, які користувач хоче записати у файл
+//     outFile.write(data.c_str(), data.size()); // Записуємо символи у файл
 //     outFile.close();
 // }
 
-// // Function to process the file and create the output file without characters from the word "геометрія"
 // void processFile(const string &inputFilename, const string &outputFilename)
 // {
 //     ifstream inFile(inputFilename, ios::binary);
@@ -39,6 +38,7 @@
 
 //     string exclude = "геометрія";
 //     char ch;
+
 //     size_t excludeIndex = 0;
 
 //     while (inFile.read(&ch, sizeof(ch)))
@@ -53,7 +53,7 @@
 //         }
 //         else
 //         {
-//             // If the character did not match the sequence, write all matched characters so far
+
 //             if (excludeIndex > 0)
 //             {
 //                 outFile.write(exclude.c_str(), excludeIndex);
@@ -63,7 +63,6 @@
 //         }
 //     }
 
-//     // Write any remaining matched characters that were not part of the full sequence
 //     if (excludeIndex > 0)
 //     {
 //         outFile.write(exclude.c_str(), excludeIndex);
@@ -73,7 +72,7 @@
 //     outFile.close();
 // }
 
-// // Function to display the contents of a file
+// // Функція для виведення вмісту файлу на екран
 // void displayFile(const string &filename)
 // {
 //     ifstream inFile(filename, ios::binary);
@@ -94,18 +93,21 @@
 //     inFile.close();
 // }
 
+// #ifndef UNIT_TESTING
+
 // int main()
 // {
-//     string inputFilename = "input.bin";
-//     string outputFilename = "output.bin";
+//     string inputFilename = "input.bin";   // Назва вхідного файлу
+//     string outputFilename = "output.bin"; // Назва вихідного файлу
 
-//     createInputFile(inputFilename);
-//     processFile(inputFilename, outputFilename);
-//     displayFile(outputFilename);
+//     createInputFile(inputFilename);             // Створюємо вхідний файл
+//     processFile(inputFilename, outputFilename); // Обробляємо файл
+//     displayFile(outputFilename);                // Виводимо вміст вихідного файлу на екран
 
 //     return 0;
 // }
 
+// #endif
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -114,7 +116,7 @@ using namespace std;
 
 void createInputFile(const string &filename)
 {
-    ofstream outFile(filename, ios::binary);
+    ofstream outFile(filename, ios::out); // Відкриваємо файл у текстовому режимі
     if (!outFile)
     {
         cerr << "Помилка відкриття файлу для запису." << endl;
@@ -122,58 +124,37 @@ void createInputFile(const string &filename)
     }
     string data;
     cout << "Введіть символи для запису в файл (без пробілів): ";
-    cin >> data;                              // Зчитуємо символи, які користувач хоче записати у файл
-    outFile.write(data.c_str(), data.size()); // Записуємо символи у файл
+    cin >> data;     // Зчитуємо символи, які користувач хоче записати у файл
+    outFile << data; // Записуємо символи у файл
     outFile.close();
 }
 
-// Функція для обробки файлу та створення вихідного файлу без символів зі слова "геометрія"
 void processFile(const string &inputFilename, const string &outputFilename)
 {
-    ifstream inFile(inputFilename, ios::binary);
+    ifstream inFile(inputFilename, ios::in); // Відкриваємо файл для читання в текстовому режимі
     if (!inFile)
     {
         cerr << "Помилка відкриття файлу для читання." << endl;
         return;
     }
 
-    ofstream outFile(outputFilename, ios::binary);
+    ofstream outFile(outputFilename, ios::out); // Відкриваємо файл для запису в текстовому режимі
     if (!outFile)
     {
         cerr << "Помилка відкриття файлу для запису." << endl;
         return;
     }
 
-    string exclude = "геометрія"; // Слово, символи якого потрібно виключити
+    string exclude = "геометрія";
     char ch;
-    size_t excludeIndex = 0; // Індекс для відстеження послідовності збігів символів
 
-    while (inFile.read(&ch, sizeof(ch)))
+    while (inFile.get(ch))
     {
-        if (ch == exclude[excludeIndex])
-        {
-            excludeIndex++; // Перевіряємо, чи наступний символ відповідає послідовності
-            if (excludeIndex == exclude.size())
-            {
-                excludeIndex = 0; // Якщо знайдено всю послідовність, скидаємо індекс
-            }
-        }
-        else
-        {
-            // Якщо символ не відповідає послідовності, записуємо всі співпалі символи
-            if (excludeIndex > 0)
-            {
-                outFile.write(exclude.c_str(), excludeIndex); // Записуємо часткову послідовність
-                excludeIndex = 0;
-            }
-            outFile.write(&ch, sizeof(ch)); // Записуємо символ, що не збігся
-        }
-    }
 
-    // Записуємо залишкові співпалі символи, які не утворили повну послідовність
-    if (excludeIndex > 0)
-    {
-        outFile.write(exclude.c_str(), excludeIndex);
+        if (exclude.find(ch) == string::npos)
+        {
+            outFile.put(ch);
+        }
     }
 
     inFile.close();
@@ -183,7 +164,7 @@ void processFile(const string &inputFilename, const string &outputFilename)
 // Функція для виведення вмісту файлу на екран
 void displayFile(const string &filename)
 {
-    ifstream inFile(filename, ios::binary);
+    ifstream inFile(filename, ios::in); // Відкриваємо файл для читання в текстовому режимі
     if (!inFile)
     {
         cerr << "Помилка відкриття файлу для читання." << endl;
@@ -192,9 +173,9 @@ void displayFile(const string &filename)
 
     cout << "Вміст файлу \"" << filename << "\": ";
     char ch;
-    while (inFile.read(&ch, sizeof(ch)))
+    while (inFile.get(ch)) // Читаємо символи по одному
     {
-        cout << ch; // Виводимо символи файлу на екран
+        cout << ch; // Виводимо символи на екран
     }
     cout << endl;
 
@@ -205,8 +186,8 @@ void displayFile(const string &filename)
 
 int main()
 {
-    string inputFilename = "input.bin";   // Назва вхідного файлу
-    string outputFilename = "output.bin"; // Назва вихідного файлу
+    string inputFilename = "input.txt";   // Назва вхідного файлу
+    string outputFilename = "output.txt"; // Назва вихідного файлу
 
     createInputFile(inputFilename);             // Створюємо вхідний файл
     processFile(inputFilename, outputFilename); // Обробляємо файл
